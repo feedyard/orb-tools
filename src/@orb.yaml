@@ -4,3 +4,12 @@ version: 2.1
 description: |
   Feedyard tools for creating, testing, and publishing Orbs. An abbreviated flavor of the
   CircleCI/orb-tols-orb for trunk based development workflows.
+
+  Basic differences with the orb-tools-orb:
+
+  * For team engaged in TBD or trunk based development, where branch merges are not expected
+  * Modifications to logic in iynere/compare-url for both TBD and support for alpine-based docker image as the executor
+  * Modified testing model. CI testing during orb development certainly has it's own idiosyncrasies
+
+  Note: The testing potion is currently still in active development. There are a variety of flavors out there, eacch with
+  strengths and weaknesses.
