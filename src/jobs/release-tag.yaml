@@ -49,8 +49,7 @@ steps:
       condition: << parameters.ssh-fingerprints >>
       steps:
         - add_ssh_keys:
-            fingerprints:
-              - "<< parameters.ssh-fingerprints >>"
+            fingerprints: << parameters.ssh-fingerprints >>
   - run:
       name: git config
       command: |
