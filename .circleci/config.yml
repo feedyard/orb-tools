@@ -31,6 +31,8 @@ major-tag-publish-filter: &major-tag-publish-filter
 
 
 workflows:
+  version: 2
+
   dev-release-orb-tools:
     jobs:
       - orb-tools/lint:
