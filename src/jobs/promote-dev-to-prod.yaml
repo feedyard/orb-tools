@@ -1,0 +1,64 @@
+# src/jobs/promote-dev-to-prod.yaml
+
+description: Promote a dev version of an orb to a semantic production release
+
+executor: circleci-orb-agent
+
+parameters:
+
+  release:
+    description: What type of release to publish (patch, minor, major)?
+    type: enum
+    enum: [patch, minor, major]
+
+  circle-token:
+    description: Name of environment variable containing your CircleCI API token
+    type: env_var_name
+    default: CIRCLE_TOKEN
+
+  orb-name:
+    description: Semver-less name of an orb, e.g. circleci/orb-tools
+    type: string
+
+  orb-ref:
+    description: >
+      Dev:reference to promote to a production release, defaults to
+      'dev:${CIRCLE_SHA1:0:7}' (evaluates to the first 7
+      characters of the job's commit hash)
+    type: string
+    default: dev:${CIRCLE_SHA1:0:7}
+
+  ssh-fingerprints:
+    description: >
+      Fingerprints for SSH deploy key (add the public key as a read/write
+      key on GitHub; add the private key in CircleCI via SSH Permissions,
+      with github.com as Hostname). Used to push a git tag back to the
+      project's repository.
+    type: string
+    default: ""
+
+  clean-up-tags:
+    description: Remove any publish tags (edit, patch, minor, major). Set to false if you want keep the tags.
+    type: boolean
+    default: true
+
+steps:
+  - checkout
+  - when:
+      condition: <<parameters.clean-up-tags>>
+      steps:
+        - clean-up-tags:
+            release: << parameters.release >>
+            ssh-fingerprints: << parameters.ssh-fingerprints >>
+  - run:
+      name: promote dev orb to production/semantic release
+      command: |
+        circleci orb publish promote \
+          << parameters.orb-name >>@<< parameters.orb-ref >> \
+          << parameters.release >> --token \
+          $<< parameters.circle-token >>
+  - run:
+      name: new orb release published to the orb registry
+      command: |
+        echo "new release:"
+        echo "https://circleci.com/orbs/registry/orb/<< parameters.orb-name >>"

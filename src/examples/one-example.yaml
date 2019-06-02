@@ -1,0 +1,59 @@
+description: >
+  description pending
+usage:
+  version: 2.1
+
+  orbs:
+    orb-tools: feedyard/orb-tools@1.0.0
+
+  workflows:
+    dev-release:
+      jobs:
+        - orb-tools/lint
+        - orb-tools/validate:
+            requires:
+              - orb-tools/lint
+
+        # release dev version of orb, for testing & potential publishing
+        - orb-tools/publish-dev:
+            orb-name: your-namespace/your-orb-name
+            requires:
+              - orb-tools/validate
+
+        - approve-release:
+            type: approve
+            requires:
+              - orb-tools/publish-dev
+
+        # calculates a semantic version and tag the SHA to manage a promote-publish
+        - orb-tools/release-tag:
+            ssh-fingerprints: your-SSH-fingerprints
+            requires:
+              - approve-release
+
+        # patch, minor, or major publishing, depending on which orb source
+        # files have been modified (that logic lives in the
+        # release-tag job's source)
+        - orb-tools/promote-dev-to-prod:
+            name: patch-release
+            release: patch
+            orb-name: your-namespace/your-orb-name
+            requires:
+              - orb-tools/release-tag
+            filters: &patch-tag-publish-filter
+
+        - orb-tools/promote-dev-to-prod:
+            name: minor-release
+            release: minor
+            orb-name: your-namespace/your-orb-name
+            requires:
+              - orb-tools/release-tag
+            filters: &minor-tag-publish-filter
+
+        - orb-tools/promote-dev-to-prod:
+            name: major-release
+            release: major
+            orb-name: your-namespace/your-orb-name
+            requires:
+              - orb-tools/release-tag
+            filters: &major-tag-publish-filter

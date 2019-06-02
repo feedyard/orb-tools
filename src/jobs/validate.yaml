@@ -1,0 +1,25 @@
+# src/jobs/validate.yaml
+
+description: pack and validate the orb source
+
+executor: circleci-orb-agent
+
+parameters:
+
+  source-dir:
+    description: Path to the root of the orb source directory to be packed
+    type: string
+    default: src
+
+  destination-orb-path:
+    description: Path including filename of where the packed orb will be written
+    type: string
+    default: orb.yml
+
+steps:
+  - checkout
+  - pack:
+      source: << parameters.source-dir >>
+      destination: << parameters.destination-orb-path >>
+  - validate:
+      orb-path: << parameters.destination-orb-path >>
