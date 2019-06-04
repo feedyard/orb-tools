@@ -7,7 +7,7 @@ description: >
 parameters:
 
   circle-token:
-    description: CircleCI API token
+    description: Name of environment variable storing your CircleCI API token
     type: env_var_name
     default: CIRCLE_TOKEN
 

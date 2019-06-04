@@ -57,6 +57,8 @@ parameters:
 
 steps:
   - checkout
+  - confirm-circle-token:
+      circle-token: << parameters.circle-token >>
   - pack:
       source: << parameters.source-dir >>
       destination: << parameters.orb-path >>

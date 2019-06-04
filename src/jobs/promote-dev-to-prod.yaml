@@ -44,6 +44,8 @@ parameters:
 
 steps:
   - checkout
+  - confirm-circle-token:
+      circle-token: << parameters.circle-token >>
   - when:
       condition: <<parameters.clean-up-tags>>
       steps:

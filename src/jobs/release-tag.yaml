@@ -45,6 +45,8 @@ parameters:
 
 steps:
   - checkout
+  - confirm-circle-token:
+      circle-token: << parameters.circle-token >>
   - when:
       condition: << parameters.ssh-fingerprints >>
       steps:
