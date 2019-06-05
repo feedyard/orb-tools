@@ -13,7 +13,7 @@ steps:
   - run:
       name: Confirm the circle-token parameter is for an environment variable that is set
       command: |
-        if [ ${<< parameters.circle-token >>-} ]; then
+        if [ ! ${<< parameters.circle-token >>-} ]; then
           echo "circle-token environment variable is not set, will not be able to access circleci api."
           exit 1
         fi
