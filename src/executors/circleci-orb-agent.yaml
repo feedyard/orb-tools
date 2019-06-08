@@ -15,4 +15,4 @@ parameters:
 resource_class: <<parameters.resource-class>>
 
 docker:
-  - image: quay.io/feedyard/circleci-orb-agent:4.1.0
+  - image: quay.io/feedyard/circleci-orb-agent:4.2.0
