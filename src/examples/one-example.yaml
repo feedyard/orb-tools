@@ -4,7 +4,7 @@ usage:
   version: 2.1
 
   orbs:
-    orb-tools: feedyard/orb-tools@2.0.2
+    orb-tools: feedyard/orb-tools@2.2.0
 
   on-push-master: &on-push-master
     branches:
@@ -17,13 +17,7 @@ usage:
 
     dev-release-orb-tools:
       jobs:
-        - orb-tools/lint:
-            use-default-rules: true
-            filters: *on-push-master
-
         - orb-tools/validate:
-            requires:
-              - orb-tools/lint
             filters: *on-push-master
 
         - orb-tools/publish-dev:
