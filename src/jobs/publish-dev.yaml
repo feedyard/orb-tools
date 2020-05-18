@@ -2,7 +2,7 @@
 
 description: Publish dev:SHA and dev:latest versions of an orb simultaneously
 
-executor: circleci-orb-agent
+executor: circleci-cli
 
 parameters:
 

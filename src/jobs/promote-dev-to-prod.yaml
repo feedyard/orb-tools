@@ -2,7 +2,7 @@
 
 description: Promote a dev version of an orb to a semantic production release
 
-executor: circleci-orb-agent
+executor: circleci-cli
 
 parameters:
 

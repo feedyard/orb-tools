@@ -2,7 +2,7 @@
 
 description: Lint an orb with yamllint
 
-executor: circleci-orb-agent
+executor: circleci-cli
 
 parameters:
 

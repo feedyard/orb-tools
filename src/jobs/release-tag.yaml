@@ -2,7 +2,7 @@ description: >
   For an orb that has been approved for a versioned release, tag the current job SHA with the semantic version change
   type. See the description under the use-git-diff parameter for how the type is determined.
 
-executor: circleci-orb-agent
+executor: circleci-cli
 
 parameters:
 

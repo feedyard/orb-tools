@@ -2,7 +2,7 @@
 
 description: pack and validate the orb source
 
-executor: circleci-orb-agent
+executor: circleci-cli
 
 parameters:
 
