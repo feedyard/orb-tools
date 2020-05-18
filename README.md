@@ -17,7 +17,7 @@ The differences (and motivation to take the time to create) are:
 * Modifications to logic in iynere/compare-url for TBD and support for alpine-based docker image as the executor
 * Modified testing model. CI testing during orb development certainly has it's own idiosyncrasies :grin:
 
-Example private registry workflow: (see [orb registry](https://circleci.com/orbs/registry/orb/feedyard/executor-tools) for detailed examples)
+Example private registry workflow: (see [orb registry](https://circleci.com/orbs/registry/orb/feedyard/orb-tools) for detailed examples)
 
 See orb registry help and examples pages for use descriptions.
 
