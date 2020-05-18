@@ -4,10 +4,13 @@
 	</p>
   <h3>feedyard orbs</h3>
   <h1>orb-tools</h1>
-  [![feedyard](https://circleci.com/gh/feedyard/orb-tools.svg?style=shield) ![CircleCI Orb Version](https://img.shields.io/badge/endpoint.svg?url=https://badges.circleci.io/orb/feedyard/orb-tools)  ![Software License](https://img.shields.io/badge/license-MIT-blue.svg)  
   <h5>an sdlc orb for authoring circleci orbs</h5>
 </div>
 <br />
+
+[![Build](https://circleci.com/gh/feedyard/orb-tools.svg?style=shield)](https://app.circleci.com/pipelines/github/feedyard/orb-tools)
+[![CircleCI Orb Version](https://img.shields.io/badge/endpoint.svg?url=https://badges.circleci.io/orb/feedyard/orb-tools)](feedyard/orb-tools)
+[![Software License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Basically a slimmed down version of the capabilities found in CircleCI's own [orb-tools-orb](https://github.com/CircleCI-Public/orb-tools-orb).  
 
