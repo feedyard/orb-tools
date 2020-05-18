@@ -8,8 +8,11 @@
   <h5>an sdlc orb for authoring circleci orbs</h5>
 </div>
 <br />
-[![feedyard](https://circleci.com/gh/feedyard/orb-tools.svg?style=shield)] [![CircleCI Orb Version](https://img.shields.io/badge/endpoint.svg?url=https://badges.circleci.io/orb/feedyard/orb-tools)] [![Software License](https://img.shields.io/badge/license-MIT-blue.svg)]
+[![feedyard](https://circleci.com/gh/feedyard/orb-tools.svg?style=shield)] [![CircleCI Orb Version](https://img.shields.io/badge/endpoint.svg?url=https://badges.circleci.io/orb/feedyard/orb-tools)] 
 Basically a slimmed down version of the capabilities found in CircleCI's own [orb-tools-orb](https://github.com/CircleCI-Public/orb-tools-orb).  
+
+
+[![Software License](https://img.shields.io/badge/license-MIT-blue.svg)]
 
 The differences (and motivation to take the time to create) are:
 
