@@ -23,8 +23,10 @@ steps:
       name: Reconstruct CIRCLE_COMPARE_URL
       when: always
       command: |
-        # don't especially like doing an apk here to get curl. But it is the only things missing from the circleci/circleci-cli cimg
-        apk add --no-cache $CIRCLE_REPOSITORY_URL
+        # curl not included in circleci/circleci-cli but required here. Alternative is to create a specialized
+        # executor for this purpose.
+        apk add --no-cache curl
+        
         # adapted from iynere/compare-url
         # this method assumes TBD
         FOUND_BASE_COMPARE_COMMIT=false
