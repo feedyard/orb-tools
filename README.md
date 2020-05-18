@@ -1,14 +1,22 @@
-# orb-tools [![CircleCI status](https://circleci.com/gh/feedyard/orb-tools.svg "CircleCI status")](https://circleci.com/gh/feedyard/orb-tools) [![CircleCI Orb Version](https://img.shields.io/badge/endpoint.svg?url=https://badges.circleci.io/orb/feedyard/orb-tools)](https://circleci.com/orbs/registry/orb/feedyard/orb-tools) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/feedyard/orb-tools/master/LICENSE)
+<div align="center">
+	<p>
+		<img alt="CircleCI Logo" src="https://raw.githubusercontent.com/ThoughtWorks-DPS/di-circleci-remote-docker/master/img/circle-circleci.svg?sanitize=true" width="75" />
+	</p>
+  <h3>feedyard orbs</h3>
+  <h1>orb-tools</h1>
+  ![feedyard](https://circleci.com/gh/feedyard/orb-tools.svg?style=shield) ![CircleCI Orb Version](https://img.shields.io/badge/endpoint.svg?url=https://badges.circleci.io/orb/feedyard/orb-tools)  ![Software License](https://img.shields.io/badge/license-MIT-blue.svg)  
+  <h5>an sdlc orb for authoring circleci orbs</h5>
+</div>
+<br />
 
-An orb for authoring orbs.
-
-Basically a slimmed down version of the capabilities found in CircleCI's own [orb-tools-orb](https://github.com/CircleCI-Public/orb-tools-orb).
+Basically a slimmed down version of the capabilities found in CircleCI's own [orb-tools-orb](https://github.com/CircleCI-Public/orb-tools-orb).  
 
 The differences (and motivation to take the time to create) are:
 
-* For team engaged in TBD or trunk based development, where branch merges are not expected
-* Modifications to logic in iynere/compare-url for both TBD and support for alpine-based docker image as the executor
+* Branch merges are not expected for team engaged in trunk based development (or TBD)
+* Modifications to logic in iynere/compare-url for TBD and support for alpine-based docker image as the executor
 * Modified testing model. CI testing during orb development certainly has it's own idiosyncrasies :grin:
 
-See orb registry help and examples pages for use descriptions.
+Example private registry workflow: (see [orb registry](https://circleci.com/orbs/registry/orb/feedyard/executor-tools) for detailed examples)
 
+See orb registry help and examples pages for use descriptions.

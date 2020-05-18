@@ -6,6 +6,12 @@ usage:
   orbs:
     orb-tools: feedyard/orb-tools@2.0.2
 
+  on-push-master: &on-push-master
+    branches:
+      only: /master/
+    tags:
+      ignore: /.*/
+
   workflows:
     version: 2
 
@@ -13,52 +19,32 @@ usage:
       jobs:
         - orb-tools/lint:
             use-default-rules: true
-            filters:
-              branches:
-                only: /master/
-              tags:
-                ignore: /.*/
+            filters: *on-push-master
 
         - orb-tools/validate:
             requires:
               - orb-tools/lint
-            filters:
-              branches:
-                only: /master/
-              tags:
-                ignore: /.*/
+            filters: *on-push-master
 
         - orb-tools/publish-dev:
             context: orb-publishing
             orb-name: feedyard/orb-tools
             requires:
               - orb-tools/validate
-            filters:
-              branches:
-                only: /master/
-              tags:
-                ignore: /.*/
+            filters: *on-push-master
 
         - approve-release:
             type: approval
             requires:
               - orb-tools/publish-dev
-            filters:
-              branches:
-                only: /master/
-              tags:
-                ignore: /.*/
+            filters: *on-push-master
 
         - orb-tools/release-tag:
             context: orb-publishing
             ssh-fingerprints: $SVC_FINGERPRINT
             requires:
               - approve-release
-            filters:
-              branches:
-                only: /master/
-              tags:
-                ignore: /.*/
+            filters: *on-push-master
 
     promote-orb-tools:
       jobs:
