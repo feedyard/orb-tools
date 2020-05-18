@@ -4,6 +4,7 @@
 	</p>
   <h3>feedyard orbs</h3>
   <h1>orb-tools</h1>
+  <a href="https://app.circleci.com/pipelines/github/feedyard/orb-tools"><img src="https://circleci.com/gh/feedyard/orb-tools.svg?style=shield"></a>
   <h5>an sdlc orb for authoring circleci orbs</h5>
 </div>
 <br />
@@ -23,3 +24,6 @@ The differences (and motivation to take the time to create) are:
 Example private registry workflow: (see [orb registry](https://circleci.com/orbs/registry/orb/feedyard/executor-tools) for detailed examples)
 
 See orb registry help and examples pages for use descriptions.
+
+
+
