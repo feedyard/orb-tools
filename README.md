@@ -12,7 +12,7 @@
 Basically a slimmed down version of the capabilities found in CircleCI's own [orb-tools-orb](https://github.com/CircleCI-Public/orb-tools-orb).  
 
 
-[![Software License]](https://img.shields.io/badge/license-MIT-blue.svg)
+[![Software License](https://img.shields.io/badge/license-MIT-blue.svg)]
 
 The differences (and motivation to take the time to create) are:
 
