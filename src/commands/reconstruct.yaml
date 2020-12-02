@@ -48,6 +48,17 @@ steps:
           VCS_TYPE=bitbucket
         fi
 
+        echo "start of commit history evaluation"
+        echo "VCS_TYPE" $VCS_TYPE
+        echo "CIRCLE_PROJECT_USERNAME" $CIRCLE_PROJECT_USERNAME
+        echo "CIRCLE_PROJECT_REPONAME" $CIRCLE_PROJECT_REPONAME
+        echo "JOB_NUM" $JOB_NUM
+
+        echo "CIRCLE_BUILD_NUM" $CIRCLE_BUILD_NUM
+        echo "CIRCLE_WORKFLOW_ID" $CIRCLE_WORKFLOW_ID
+        echo "CIRCLE_SHA1" $CIRCLE_SHA1
+        echo "CIRCLE_BRANCH" $CIRCLE_BRANCH
+
         until ( $FOUND_BASE_COMPARE_COMMIT == true )
         do
           # save current job/api output to a temp file
@@ -55,6 +66,9 @@ steps:
                https://circleci.com/api/v1.1/project/$VCS_TYPE/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$JOB_NUM \
                > JOB_OUTPUT
 
+          echo "prior job history pulled"
+          cat JOB_OUTPUT | head -n 10
+          
           if ( ! grep "\"workflow_id\" : \"$CIRCLE_WORKFLOW_ID\"" JOB_OUTPUT ) && \
             # job is not a retry of a previous job
             ( grep '"retry_of" : null' JOB_OUTPUT ) && \
