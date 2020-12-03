@@ -36,7 +36,7 @@ steps:
 
         extract_commit_from_job () {
           # takes $1 (VCS_TYPE) & $2 (a job number)
-          curl --user << parameters.circle-token >>: \
+          curl --user $<< parameters.circle-token >>: \
             https://circleci.com/api/v1.1/project/$1/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$2 | \
             grep '"vcs_revision" : ' | sed -E 's/"vcs_revision" ://' | sed -E 's/[[:punct:]]//g' | sed -E 's/ //g'
         }
@@ -62,13 +62,13 @@ steps:
         until ( $FOUND_BASE_COMPARE_COMMIT == true )
         do
           # save current job/api output to a temp file
-          curl --user << parameters.circle-token >>: \
+          curl --user $<< parameters.circle-token >>: \
                https://circleci.com/api/v1.1/project/$VCS_TYPE/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$JOB_NUM \
                > JOB_OUTPUT
 
           echo "prior job history pulled"
           cat JOB_OUTPUT | head -n 10
-          
+
           if ( ! grep "\"workflow_id\" : \"$CIRCLE_WORKFLOW_ID\"" JOB_OUTPUT ) && \
             # job is not a retry of a previous job
             ( grep '"retry_of" : null' JOB_OUTPUT ) && \
