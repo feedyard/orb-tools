@@ -1,5 +1,5 @@
 <div align="center">
-  <h3>DEPRECATED. Orb moved to [twdps/orb-tools](https://github.com/ThoughtWorks-DPS/orb-tools). See repo or orb-registry for additional details.</h3>
+  <h3>DEPRECATED. Orb moved to https://github.com/ThoughtWorks-DPS/orb-tools. See repo or orb-registry for additional details.</h3>
   <h3>feedyard orbs</h3>
   <h1>orb-tools</h1>
   <a href="https://app.circleci.com/pipelines/github/feedyard/orb-tools"><img src="https://circleci.com/gh/feedyard/orb-tools.svg?style=shield"></a> 
