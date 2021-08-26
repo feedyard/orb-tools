@@ -1,10 +1,8 @@
 <div align="center">
-	<p>
-		<img alt="CircleCI Logo" src="https://raw.githubusercontent.com/ThoughtWorks-DPS/di-circleci-remote-docker/master/img/circle-circleci.svg?sanitize=true" width="75" />
-	</p>
+  <h3>DEPRECATED. Orb moved to [twdps/orb-tools](https://github.com/ThoughtWorks-DPS/orb-tools). See repo or orb-registry for additional details.</h3>
   <h3>feedyard orbs</h3>
   <h1>orb-tools</h1>
-  <a href="https://app.circleci.com/pipelines/github/feedyard/orb-tools"><img src="https://circleci.com/gh/feedyard/orb-tools.svg?style=shield"></a> <a href="https://circleci.com/orbs/registry/orb/feedyard/orb-tools"><img src="https://img.shields.io/badge/endpoint.svg?url=https://badges.circleci.io/orb/feedyard/orb-tools"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <a href="https://app.circleci.com/pipelines/github/feedyard/orb-tools"><img src="https://circleci.com/gh/feedyard/orb-tools.svg?style=shield"></a> 
   <h5>an sdlc orb for authoring circleci orbs</h5>
 </div>
 <br />
